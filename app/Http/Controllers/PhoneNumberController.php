@@ -3,29 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\PhoneNumber;
+use App\Services\PhoneNumberService;
 
 class PhoneNumberController extends Controller
 {
+    protected $phoneNumberService;
+
+    public function __construct()
+    {
+        $this->phoneNumberService = app(PhoneNumberService::class);
+    }
+
     /**
      * Get paginated phone numbers based on filters.
      */
     public function index(Request $request)
     {
-        $query = PhoneNumber::query();
+        $country = $request->input('country');
+        $state = $request->input('state');
 
-        // Filter by country if specified
-        if ($request->filled('country')) {
-            $query->where('country', $request->input('country'));
-        }
-
-        // Filter by state if specified
-        if ($request->filled('state')) {
-            $query->where('state', $request->input('state'));
-        }
-
-        // Fetch paginated records
-        $phoneNumbers = $query->paginate(10); // Adjust the number of items per page as needed
+        $phoneNumbers = $this->phoneNumberService->getFilteredPhoneNumbers($country, $state);
 
         return response()->json([
             'data' => $phoneNumbers->items(),
@@ -39,7 +36,7 @@ class PhoneNumberController extends Controller
      */
     public function getCountries()
     {
-        $countries = PhoneNumber::select('country')->distinct()->pluck('country');
+        $countries = $this->phoneNumberService->getDistinctCountries();
         return response()->json($countries);
     }
 }
