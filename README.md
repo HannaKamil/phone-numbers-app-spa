@@ -68,6 +68,12 @@ npm run dev
 
 Visit `http://localhost:8000` to see your application in action.
 
+### Download Directly
+
+You can also download the latest version of the application directly from Google Drive:
+
+[Download Phone Numbers APP](https://drive.google.com/file/d/1gYUWqnEr_fKhY0Ofc_swudf2dLFL2DGl/view?usp=drive_link)
+
 ## Usage
 
 1. **Frontend**: The Vue.js SPA handles the user interface, including dropdowns for filtering phone numbers and pagination.
@@ -85,4 +91,3 @@ Visit `http://localhost:8000` to see your application in action.
 ## Contributing
 
 Feel free to submit issues or pull requests to improve the application.
- 
