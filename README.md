@@ -72,7 +72,7 @@ Visit `http://localhost:8000` to see your application in action.
 
 You can also download the latest version of the application directly from Google Drive:
 
-[Download Phone Numbers APP](https://drive.google.com/file/d/1gYUWqnEr_fKhY0Ofc_swudf2dLFL2DGl/view?usp=drive_link)
+[Download Phone Numbers APP](https://drive.google.com/file/d/1A5AOUQ1zkOeyBW_dk1Lm8rSdcv8fH1tx/view?usp=sharing)
 
 ## Usage
 
